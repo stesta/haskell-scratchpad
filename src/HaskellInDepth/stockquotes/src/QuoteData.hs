@@ -8,6 +8,7 @@ import Data.ByteString.Char8 (unpack)
 import GHC.Generics (Generic)
 import Data.Csv (FromNamedRecord, FromField (..))
 
+-- | suitable for csv parsing and statistics
 data QuoteData = QuoteData {
                    day :: Day
                  , volume :: Int    -- ^ total stock volume 
@@ -33,4 +34,3 @@ field2fun Close = close
 field2fun High = high
 field2fun Low = low
 field2fun Volume = fromIntegral . volume
-
